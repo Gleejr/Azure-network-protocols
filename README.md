@@ -231,14 +231,130 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/a19fd72e-90de-4bb3-a32f-c63b5e1f7c09)
 
+(Windows Powershell shows that four packets were sent to VM2 (10.0.0.5) and four packets were received. Wireshark shows requests that were sent out to 10.0.0.5 (VM2) and replies were sent back to 10.0.0.4 (VM1).
+
+<p>
+ 25. Next type in ping 10.0.0.5 -t to send a continuous ping to VM2. I will now change the firewall to block inbound traffic coming to VM2.  
+</p>
+
+![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/50b562a7-49de-4fcd-b667-8573a4488622)
+
+
+<p>
+26. Go back to the Azure portal and type in network security groups.
+</p>
+
+![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/3fa8a8de-7489-4b4e-9bcc-d9222c2df35b)
+
+
+<p>
+ 27. Click on VM2-nsg, click on inbound security rules, and click the plus sign to add a rule. 
+</p>
+
+![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/813130a1-4653-47d4-80c1-5c8735b2637b)
+
+
+<p>
+28. Under protocol select ICMP, under action select deny, under priority change thenumber to 200, input a name (I enteter the name Deny_ICMP_from_anywhere), and click add.
+</p>
+
+![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/7715c66e-f427-443b-a559-323fb390a0ee)
+
+
+<p>
+29. Click refresh and go back to VM1. The ping request should now be timing out (message will say "Request timed out"). This is because the new rule that was added in now blocking all ping request. Wireshark will also just show request being sent, but won't show any replies. 
+</p>
+
+![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/a39e4aab-4ed1-4c5e-b508-ba1cf291afd3)
+
+
+<p>
+30. To fix this delete the rule that was created or edit the rule to allow ICMP. Save the change and click refresh again. ICMP ping request should now be receving replies again,
+</p>
+
+![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/91bfeb5a-4484-4b9c-98bf-d17c55043ac5)
+
+
+<p>
+31. Clear wireshark by clicking the green icon and select continue without saving. Next change the filter to ssh and click enter. Next we will connect to VM2 using SSH.
+</p>
+
+![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/62cbc74c-44c6-4a55-a099-703b6a0d4aa0)
+
+
+<p>
+32. Next type in ssh, the username for your VM2, the "@" sign, the Private IP address for VM2, and press enter. (it should look like this ssh @labuser10.0.0.5)
+</p>
+
+
+![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/a7f3c960-3c47-4055-ada6-d42113669169)
+
+
+<p>
+ 33. Enter yes for "Are you sure you want to continue connecting", input the password for VM2 (my password is Password1234), press enter and you should receive a meesage thats says you're connnected to VM2. 
+</p>
+
+![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/3bd3f24c-1c53-419b-9fdc-478d297de58b)
+
+
+![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/2cfd6e0d-0f8b-4ccc-a33e-895612427f32)
+
+
+![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/98a184e9-82bd-4d96-bd65-5d7d138daea8)
 
 
 
+<p>
+34. Since the filter was set for ssh, Wireshark shows the traffic of connecting VM1 to VM2 using ssh.
+</p>
 
 
+![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/0928ac7d-b545-4463-a436-e03f7e6a0cf0)
 
 
+<p>
+35. Next I will observe DHCP traffic. I will clear Wireshark and change the filter to dhcp.
+</p>
 
 
+![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/6fe8997b-fdd7-4145-b2a8-fb3720cf9b5f)
 
+
+<p>
+36. Type in ipconfig /renew, this command will reassign the IP address to VM1 and show the traffic on Wireshark.
+</p>
+
+
+![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/3d9b521e-9145-4636-b157-df2da53ed34d)
+
+
+![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/9a02b62e-a52c-49cf-8ddb-e4caba8e2e20)
+
+
+<p>
+37. Next I will observe DNS traffic. I will clear Wireshark and change the filter to dns.
+</p>
+
+
+![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/367e4486-0cd5-4ffa-8790-2b40c6415213)
+
+<p>
+38. Type in nslookup www.disney.com (it can be any website) and click enter. The traffic will appear on wireshark.
+</p>
+
+
+![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/becd9f91-c94c-42a4-9a04-2d57fe6906f4)
+
+
+<p>
+39. Next I will observe RDP traffic. I will clear Wireshark and change the filter to tcp.port == 3389.
+</p>
+
+![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/f8689968-763b-4b60-bb67-db40c76bc6ba)
+
+<p>
+40. Since I am actively using remote desktop to use VM1 there is alot traffic that will appear on Wireshark.
+</p>
+
+![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/4122c6f8-a365-45ef-82fc-87c1393891ee)
 
