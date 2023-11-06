@@ -32,13 +32,13 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>Actions and Observations</h2>
 <p>
-1. Login to your Microsoft Azure Portal and type in resource groups in the search bar.
+1. Log in to your Microsoft Azure Portal and enter "resource groups" in the search bar.
 </p>
 <p>
   
   ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/4c250aab-d539-4c24-b585-71a745a4e604)
 </p>
-<p>2. Click resource group and then click the plus sign to create a resource group.
+<p>2. Click "Resource groups," then click the plus sign to create a resource group.
 </p>
 <br />
 <p>
@@ -48,7 +48,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 
 <p>
-3. Input a name for the resource group, select a region, then click Review + create (I have named my resouce group Network-Lab and the region is (US) West US 3) 
+3. Enter a name for the resource group, select a region, and click "Review + create" (e.g., "Network-Lab" and "US West US 3").
 </p>
 <br />
 
@@ -59,7 +59,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 
 <p>
-4. Once the resource group has finished being created, search for virtual machines in the search bar.
+4. After the resource group is created, search for "virtual machines" in the search bar.
 </p>
 <br />
 
@@ -71,7 +71,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 
 <p>
-5. Click virtual machines, click the plus sign, and next click "Create a virtual machine hosted by Azure"
+5. Click "Virtual machines," click the plus sign, and select "Create a virtual machine hosted by Azure."
 </p>
 <br />
 
@@ -82,7 +82,8 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 
 <p>
-6. Select the resource group that was created in step 3, input a name for the virtual machine (I have enetered VM1), Select the region for this virtual machine (I have selected the same region for my resource group (US) West US 3)
+6. Select the resource group created in step 3, enter a name for the virtual machine (e.g., "VM1"), choose the same region as the resource group (e.g., "US West US 3").
+  
 </p>
 <br />
 
@@ -93,7 +94,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 </p>
 
 <p>
-7. Select Windows 10 Pro version 22H2 - x64 Gen2 for the image, select Standard_E_2s_v3 - 2 vcpus 16 GiB memory for the size, and create a username and password (labuser is th username I created and the password is Password1234)
+7. Select "Windows 10 Pro version 22H2 - x64 Gen2" for the image, and choose "Standard_E_2s_v3 - 2 vCPUs 16 GiB memory" for the size. Create a username and password (e.g., "labuser" and "Password1234").
 </p>
 <br />
 
@@ -104,7 +105,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 
 <p>
-8. Click "I confirm" at the bottom, click review + create, and once validation passes click create.
+8. Click "I confirm," then "Review + create," and once validation passes, click "Create."
 </p>
 <br />
 
@@ -116,7 +117,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 
 <p>
-9. Navigate back to virutal machines to create another virtual machine. Repeat Step 6 but do not create another windows machine and select a new name for this virtual machine. (I have named this virtual machine VM2, it will be running Ubuntu)
+9. Create another virtual machine (e.g., "VM2") following similar steps as in step 6, but select "Ubuntu Server 20.04 LTS - x64 Gen2" for the image.
 </p>
 
 <p>
@@ -126,35 +127,35 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 ![2023-11-05_16-51-36](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/b73f1e81-f2ee-410a-bb3d-a544357754fc)
 
 <p>
- 11. For authentication type select password and create a username and password. (I used the same username and password for VM1)
+ 11. For authentication type, select "password" and create a username and password (you can use the same credentials as in step 8).
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/73966a9e-4de3-44fe-b6ec-624e24836123)
 
 
 <p>
-12. Click next twice at the bottom to get to the Networking screen. It will show that the VM2 will be on the same virtual network as VM1. (Azure already created a virtual network for VM1 and now that we created VM2 in the same reource group it will also use the same virtual netowrk as VM1. Azure has created VM1-vnet for my virtual network)
+12. Go to the networking screen and verify that VM2 will be on the same virtual network as VM1.(Azure already created a virtual network for VM1 and now that we created VM2 in the same reource group it will also use the same virtual netowrk as VM1. Azure has created VM1-vnet for my virtual network)
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/309eb96b-b178-474d-9cb7-0da9c521a819)
 
 
 <p>
-13. Click review + create and once validation has passed click create again to build VM2. 
+13. Click "Review + create," and once validation passes, click "Create" to build VM2.
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/44bfd1d6-3f6a-4ed9-ace4-34e7052f1ccd)
 
 
 <p>
-14. Now that we have two virtual machines VM1 and VM2 we will use microsoft remote desktop to access VM1. Grab the the public IP address for VM1. This can be found by going to Virtual machines, clicking on VM1, and Public IP address is right under size. (I'm using a macbook. I downloaded Microsoft Remote desktop)
+14. Now that we have two virtual machines VM1 and VM2 we will use microsoft remote desktop to access VM1. Retrieve the public IP address for VM1. This can be found by going to Virtual machines, clicking on VM1, and Public IP address is right under size. (Download Microsoft Remote desktop if using MAC)
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/f43b9191-dd51-4890-89fc-d695e99544ed)
 
 
 <p>
-15. Start up Microsoft Remote desktop, click add PC, input the public IP address for VM1, and click add.
+15. Use Microsoft Remote Desktop to access VM1 by entering its public IP address.
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/6460d0aa-949a-45e8-a6d6-41efd3adf457)
@@ -171,35 +172,35 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 
 <p>
-17. Open Microsoft Edge and go to google.com, type in the search bar download Wireshark, and click on the first link.
+17. Open Microsoft Edge, go to google.com, search for "download Wireshark," and click on the first link.
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/df0eff56-b8f7-4ba4-960b-d1dce45bf309)
 
 
 <p>
- 18. Click on Windows x64 Installer and Wireshark will start to download.
+ 18. Click "Windows x64 Installer" to download Wireshark.
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/84ac522b-f461-4a3e-a12d-4db31d098853)
 
 
 <p>
- 19. Open the Wireshark Installer, keep clicking next (leave every option to the default setting), and click install until you get to the last screen that shows finish.
+ 19. Open the Wireshark Installer, proceed by clicking "Next" (leave every option at the default setting), and click "Install" until you reach the final screen showing "Finish."
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/d51d62d8-0270-4554-8a01-99f341466688)
 
 
 <p>
- 20. Open wireshark, click ethernet, and click the blue icon in the top left. (when you hover over the icon it should say "start capturing packets")   
+ 20. Open Wireshark, click "Ethernet," and click the blue icon in the top left to start capturing packets. 
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/f1e6d21f-7895-47c3-86a2-363a60a1323b)
 
 
 <p>
- 21. There will be alot of traffic showing because there is so much running in the background. Type in ICMP where it says "apply a display filter" and press enter.
+ 21. There will be alot of traffic showing because there is so much running in the background. Type "ICMP" in the "Apply a display filter" box and press Enter.
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/4ebe27e3-1cd7-45a1-b78d-da65b0171568)
@@ -208,19 +209,19 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 
 <p>
- 22. Notice the traffic stopped. ICMP is the protocol that ping uses. I will now ping VM2 to view the traffic between VM1 and VM2.
+ 22. Notice the traffic has stopped; ICMP is the protocol used by ping. Proceed to ping VM2.
 </p>
 
 
 <p>
- 23. Go back to your azure portal, go into VM2, and copy the Private IP address for VM2 (The private IP address for my VM2 is 10.0.0.5)
+ 23. Go to your Azure portal, access VM2, and copy its Private IP address (e.g., 10.0.0.5).
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/92bf187a-ff82-4224-9f37-36702a491e2b)
 
 
 <p>
-23. Go back into VM1 and open Windows Powershell.
+23. Return to VM1, open Windows Powershell, and type "ping" followed by the private IP address of VM2.
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/89440f12-0fd0-4d43-aa49-e75ebfd09349)
@@ -234,56 +235,56 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 (Windows Powershell shows that four packets were sent to VM2 (10.0.0.5) and four packets were received. Wireshark shows requests that were sent out to 10.0.0.5 (VM2) and replies were sent back to 10.0.0.4 (VM1).
 
 <p>
- 25. Next type in ping 10.0.0.5 -t to send a continuous ping to VM2. I will now change the firewall to block inbound traffic coming to VM2.  
+ 25. Type "ping 10.0.0.5 -t" to send a continuous ping to VM2. Modify the firewall to block inbound traffic to VM2. 
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/50b562a7-49de-4fcd-b667-8573a4488622)
 
 
 <p>
-26. Go back to the Azure portal and type in network security groups.
+26. Go back to the Azure portal and search for "network security groups."
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/3fa8a8de-7489-4b4e-9bcc-d9222c2df35b)
 
 
 <p>
- 27. Click on VM2-nsg, click on inbound security rules, and click the plus sign to add a rule. 
+ 27. Click on "VM2-nsg," select "Inbound security rules," and click the plus sign to add a rule. 
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/813130a1-4653-47d4-80c1-5c8735b2637b)
 
 
 <p>
-28. Under protocol select ICMP, under action select deny, under priority change thenumber to 200, input a name (I enteter the name Deny_ICMP_from_anywhere), and click add.
+28. Set the rule to deny ICMP traffic with a priority of 200 (e.g., "Deny_ICMP_from_anywhere").
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/7715c66e-f427-443b-a559-323fb390a0ee)
 
 
 <p>
-29. Click refresh and go back to VM1. The ping request should now be timing out (message will say "Request timed out"). This is because the new rule that was added in now blocking all ping request. Wireshark will also just show request being sent, but won't show any replies. 
+29. Refresh and return to VM1; ping requests to VM2 should time out. This is because the new rule that was added in now blocking all ping request. Wireshark will also just show request being sent, but won't show any replies. 
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/a39e4aab-4ed1-4c5e-b508-ba1cf291afd3)
 
 
 <p>
-30. To fix this delete the rule that was created or edit the rule to allow ICMP. Save the change and click refresh again. ICMP ping request should now be receving replies again,
+30. Delete or modify the rule to allow ICMP and refresh again; ping requests should work.
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/91bfeb5a-4484-4b9c-98bf-d17c55043ac5)
 
 
 <p>
-31. Clear wireshark by clicking the green icon and select continue without saving. Next change the filter to ssh and click enter. Next we will connect to VM2 using SSH.
+31. Clear Wireshark and change the filter to "ssh." Connect to VM2 using ssh.
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/62cbc74c-44c6-4a55-a099-703b6a0d4aa0)
 
 
 <p>
-32. Next type in ssh, the username for your VM2, the "@" sign, the Private IP address for VM2, and press enter. (it should look like this ssh @labuser10.0.0.5)
+32. Connect to VM2 using SSH by typing "ssh @labuser10.0.0.5" (use your VM2 username and IP address).
 </p>
 
 
@@ -291,7 +292,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 
 <p>
- 33. Enter yes for "Are you sure you want to continue connecting", input the password for VM2 (my password is Password1234), press enter and you should receive a meesage thats says you're connnected to VM2. 
+ 33. Enter "yes" to confirm connecting and input the password for VM2. There should receive a meesage thats says you're connnected to VM2. 
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/3bd3f24c-1c53-419b-9fdc-478d297de58b)
@@ -305,7 +306,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 
 <p>
-34. Since the filter was set for ssh, Wireshark shows the traffic of connecting VM1 to VM2 using ssh.
+34. Observe SSH traffic in Wireshark.
 </p>
 
 
@@ -313,7 +314,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 
 <p>
-35. Next I will observe DHCP traffic. I will clear Wireshark and change the filter to dhcp.
+35. Clear Wireshark again and change the filter to "dhcp."
 </p>
 
 
@@ -321,7 +322,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 
 <p>
-36. Type in ipconfig /renew, this command will reassign the IP address to VM1 and show the traffic on Wireshark.
+36. Type "ipconfig /renew" in the Windows Powershell of VM1 to renew the IP address and observe DHCP traffic.
 </p>
 
 
@@ -332,14 +333,14 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 
 <p>
-37. Next I will observe DNS traffic. I will clear Wireshark and change the filter to dns.
+37. Clear Wireshark and change the filter to "dns". Type "nslookup www.disney.com" (or any website) in Windows Powershell.
 </p>
 
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/367e4486-0cd5-4ffa-8790-2b40c6415213)
 
 <p>
-38. Type in nslookup www.disney.com (it can be any website) and click enter. The traffic will appear on wireshark.
+38. Type "nslookup www.disney.com" (or any website) in Windows Powershell. Observe DNS traffic in Wireshark.
 </p>
 
 
@@ -347,13 +348,13 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 
 <p>
-39. Next I will observe RDP traffic. I will clear Wireshark and change the filter to tcp.port == 3389.
+39. Clear Wireshark, change the filter to "tcp.port == 3389".
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/f8689968-763b-4b60-bb67-db40c76bc6ba)
 
 <p>
-40. Since I am actively using remote desktop to use VM1 there is alot traffic that will appear on Wireshark.
+40. Observe RDP traffic in Wireshark.
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/4122c6f8-a365-45ef-82fc-87c1393891ee)
