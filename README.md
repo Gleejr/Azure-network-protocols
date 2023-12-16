@@ -31,8 +31,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
   
   ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/4c250aab-d539-4c24-b585-71a745a4e604)
 </p>
-<p>2. Click "Resource groups," then click the plus sign to create a resource group.
-</p>
+<p>2. Click "Resource groups," then click the plus sign to create a resource group.</p>
 <br />
 <p>
 
@@ -202,9 +201,8 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 
 <p>
- 22. Notice the traffic has stopped; ICMP is the protocol used by ping. Proceed to ping VM2.
+ 22. Notice the traffic has stopped; ICMP is the protocol used by ping. 
 </p>
-
 
 <p>
  23. Go to your Azure portal, access VM2, and copy its Private IP address (e.g., 10.0.0.5).
@@ -214,13 +212,13 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 
 <p>
-23. Return to VM1, open Windows Powershell, and type "ping" followed by the private IP address of VM2.
+24. Return to VM1, open Windows Powershell or Command Prompt, and type "ping" followed by the private IP address of VM2.
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/89440f12-0fd0-4d43-aa49-e75ebfd09349)
 
 <p>
- 24. Type in ping and the private IP address (10.0.0.5) of VM2 and press enter. You should now see the traffic that occurred between VM1 and VM2 on Wireshark.
+ 25. Type in ping and the private IP address (10.0.0.5) of VM2 and press enter. You should now see the traffic that occurred between VM1 and VM2 on Wireshark.
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/a19fd72e-90de-4bb3-a32f-c63b5e1f7c09)
@@ -228,56 +226,56 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 (Windows Powershell shows that four packets were sent to VM2 (10.0.0.5) and four packets were received. Wireshark shows requests that were sent out to 10.0.0.5 (VM2) and replies were sent back to 10.0.0.4 (VM1).
 
 <p>
- 25. Type "ping 10.0.0.5 -t" to send a continuous ping to VM2. Modify the firewall to block inbound traffic to VM2. 
+ 26. Type "ping 10.0.0.5 -t" to send a continuous ping to VM2. Modify the firewall to block inbound traffic to VM2. 
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/50b562a7-49de-4fcd-b667-8573a4488622)
 
 
 <p>
-26. Go back to the Azure portal and search for "network security groups."
+27. Go back to the Azure portal and search for "network security groups."
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/3fa8a8de-7489-4b4e-9bcc-d9222c2df35b)
 
 
 <p>
- 27. Click on "VM2-nsg," select "Inbound security rules," and click the plus sign to add a rule. 
+28. Click on "VM2-nsg," select "Inbound security rules," and click the plus sign to add a rule. 
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/813130a1-4653-47d4-80c1-5c8735b2637b)
 
 
 <p>
-28. Set the rule to deny ICMP traffic with a priority of 200 (e.g., "Deny_ICMP_from_anywhere").
+29. Set the rule to deny ICMP traffic with a priority of 200 (e.g., "Deny_ICMP_from_anywhere").
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/7715c66e-f427-443b-a559-323fb390a0ee)
 
 
 <p>
-29. Refresh and return to VM1; ping requests to VM2 should time out. This is because the new rule that was added in now blocking all ping request. Wireshark will also just show request being sent, but won't show any replies. 
+30. Refresh and return to VM1; ping requests to VM2 should time out. This is because the new rule that was added in now blocking all ping request. Wireshark will also just show request being sent, but won't show any replies. 
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/a39e4aab-4ed1-4c5e-b508-ba1cf291afd3)
 
 
 <p>
-30. Delete or modify the rule to allow ICMP and refresh again; ping requests should work.
+31. Delete or modify the rule to allow ICMP and refresh again; ping requests should work.
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/91bfeb5a-4484-4b9c-98bf-d17c55043ac5)
 
 <h3>SSH</h3>
 <p>
-31. Clear Wireshark and change the filter to "ssh." Connect to VM2 using ssh.
+32. Clear Wireshark and change the filter to "ssh." Connect to VM2 using ssh.
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/62cbc74c-44c6-4a55-a099-703b6a0d4aa0)
 
 
 <p>
-32. Connect to VM2 using SSH by typing "ssh labuser@10.0.0.5" (use your VM2 username and IP address).
+33. Connect to VM2 using SSH by typing "ssh labuser@10.0.0.5" (use your VM2 username and IP address).
 </p>
 
 
@@ -285,7 +283,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 
 <p>
- 33. Enter "yes" to confirm connecting and input the password for VM2. There should receive a meesage thats says you're connnected to VM2. 
+34. Enter "yes" to confirm connecting and input the password for VM2. There should receive a meesage thats says you're connnected to VM2. 
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/3bd3f24c-1c53-419b-9fdc-478d297de58b)
@@ -299,7 +297,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 
 <p>
-34. Observe SSH traffic in Wireshark.
+35. Observe SSH traffic in Wireshark.
 </p>
 
 
@@ -307,7 +305,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h3>DHCP</h3>
 <p>
-35. Clear Wireshark again and change the filter to "dhcp."
+36. Clear Wireshark again and change the filter to "dhcp."
 </p>
 
 
@@ -315,7 +313,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 
 <p>
-36. Type "ipconfig /renew" in the Windows Powershell of VM1 to renew the IP address and observe DHCP traffic.
+37. Type "ipconfig /renew" in the Windows Powershell of VM1 to renew the IP address and observe DHCP traffic.
 </p>
 
 
@@ -327,14 +325,14 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h3>DNS</h3>
 <p>
-37. Clear Wireshark and change the filter to "dns". Type "nslookup www.disney.com" (or any website) in Windows Powershell.
+38. Clear Wireshark and change the filter to "dns". Type "nslookup www.disney.com" (or any website) in Windows Powershell.
 </p>
 
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/367e4486-0cd5-4ffa-8790-2b40c6415213)
 
 <p>
-38. Type "nslookup www.disney.com" (or any website) in Windows Powershell. Observe DNS traffic in Wireshark.
+39. Type "nslookup www.disney.com" (or any website) in Windows Powershell. Observe DNS traffic in Wireshark.
 </p>
 
 
@@ -342,13 +340,13 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h3>RDP</h3>
 <p>
-39. Clear Wireshark, change the filter to "tcp.port == 3389".
+40. Clear Wireshark, change the filter to "tcp.port == 3389".
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/f8689968-763b-4b60-bb67-db40c76bc6ba)
 
 <p>
-40. Observe RDP traffic in Wireshark.
+41. Observe RDP traffic in Wireshark.
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/4122c6f8-a365-45ef-82fc-87c1393891ee)
