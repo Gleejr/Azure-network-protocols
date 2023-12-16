@@ -24,6 +24,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 - Ubuntu Server 20.04
 
 <h2>Languages</h2>
+
 - Powershell or Command Prompt
 
 <h2>Actions and Observations</h2>
