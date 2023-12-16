@@ -36,7 +36,7 @@ In this tutorial, we analyze network traffic encompassing ICMP, SSH, HTTP/S, DNS
   ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/4c250aab-d539-4c24-b585-71a745a4e604)
 </p>
 <p>2. Click "Resource groups," then click the plus sign to create a resource group.</p>
-<br />
+
 <p>
 
   ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/8cbb8498-cb27-4417-a85f-f3612a6152fa)
@@ -46,7 +46,6 @@ In this tutorial, we analyze network traffic encompassing ICMP, SSH, HTTP/S, DNS
 <p>
 3. Enter a name for the resource group, select a region, and click "Review + create" (e.g., "Network-Lab" and "US West US 3").
 </p>
-<br />
 
 <p>
 
@@ -57,19 +56,16 @@ In this tutorial, we analyze network traffic encompassing ICMP, SSH, HTTP/S, DNS
 <p>
 4. After the resource group is created, search for "virtual machines" in the search bar.
 </p>
-<br />
 
 <p>
 
   ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/82455546-218c-48ef-b58e-9be39ad0aef9)
-
 </p>
 
 
 <p>
 5. Click "Virtual machines," click the plus sign, and select "Create a virtual machine hosted by Azure."
 </p>
-<br />
 
 <p>
 
@@ -78,21 +74,17 @@ In this tutorial, we analyze network traffic encompassing ICMP, SSH, HTTP/S, DNS
 
 
 <p>
-6. Select the resource group created in step 3, enter a name for the virtual machine (e.g., "VM1"), choose the same region as the resource group (e.g., "US West US 3").
-  
+6. Select the resource group created in step 3, enter a name for the virtual machine (e.g., "VM1"), choose the same region as the resource group (e.g., "US West US 3"). 
 </p>
-<br />
 
 <p>
 
   ![2023-11-05_16-24-31](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/ec2f613b-8b2e-40aa-976d-7e36a9b4fc3c)
-
 </p>
 
 <p>
 7. Select "Windows 10 Pro version 22H2 - x64 Gen2" for the image, and choose "Standard_E_2s_v3 - 2 vCPUs 16 GiB memory" for the size. Create a username and password (e.g., "labuser" and "Password1234").
 </p>
-<br />
 
 <p>
 
@@ -103,7 +95,6 @@ In this tutorial, we analyze network traffic encompassing ICMP, SSH, HTTP/S, DNS
 <p>
 8. Click "I confirm," then "Review + create," and once validation passes, click "Create."
 </p>
-<br />
 
 <p>
 
