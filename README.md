@@ -191,7 +191,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/f1e6d21f-7895-47c3-86a2-363a60a1323b)
 
-
+<h3>ICMP</h3> 
 <p>
  21. There will be alot of traffic showing because there is so much running in the background. Type "ICMP" in the "Apply a display filter" box and press Enter.
 </p>
@@ -268,7 +268,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/91bfeb5a-4484-4b9c-98bf-d17c55043ac5)
 
-
+<h3>SSH</h3>
 <p>
 31. Clear Wireshark and change the filter to "ssh." Connect to VM2 using ssh.
 </p>
@@ -277,7 +277,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 
 <p>
-32. Connect to VM2 using SSH by typing "ssh @labuser10.0.0.5" (use your VM2 username and IP address).
+32. Connect to VM2 using SSH by typing "ssh labuser@10.0.0.5" (use your VM2 username and IP address).
 </p>
 
 
@@ -305,7 +305,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/0928ac7d-b545-4463-a436-e03f7e6a0cf0)
 
-
+<h3>DHCP</h3>
 <p>
 35. Clear Wireshark again and change the filter to "dhcp."
 </p>
@@ -325,6 +325,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/9a02b62e-a52c-49cf-8ddb-e4caba8e2e20)
 
 
+<h3>DNS</h3>
 <p>
 37. Clear Wireshark and change the filter to "dns". Type "nslookup www.disney.com" (or any website) in Windows Powershell.
 </p>
@@ -339,7 +340,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/becd9f91-c94c-42a4-9a04-2d57fe6906f4)
 
-
+<h3>RDP</h3>
 <p>
 39. Clear Wireshark, change the filter to "tcp.port == 3389".
 </p>
