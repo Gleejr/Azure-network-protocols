@@ -341,7 +341,7 @@ In this tutorial, we analyze network traffic encompassing ICMP, SSH, HTTP/S, DNS
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/f8689968-763b-4b60-bb67-db40c76bc6ba)
 
 <p>
-41. Observe RDP traffic in Wireshark.
+41. Observe RDP traffic in Wireshark. (As we utilize Remote Desktop on VM1, expect a significant amount of traffic to appear on Wireshark.)
 </p>
 
 ![image](https://github.com/Gleejr/Azure-network-protocols/assets/148407820/4122c6f8-a365-45ef-82fc-87c1393891ee)
