@@ -23,6 +23,9 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 - Windows 10 (21H2)
 - Ubuntu Server 20.04
 
+<h2>Languages</h2>
+- Powershell or Command Prompt
+
 <h2>Actions and Observations</h2>
 <p>
 1. Log in to your Microsoft Azure Portal and enter "resource groups" in the search bar.
